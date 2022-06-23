@@ -4,16 +4,15 @@ An Alt generator for Roblox built using python.
 Big thanks to [Bloxalts](https://discord.gg/nsDfQJ8sES) for their awesome API!
 
 ## Installation
-
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements.
+Clone the repo and navigate to the folder with it. Open folder in cmd and type in:
 
 ```bash
 pip install -r requirements.txt
 ```
 
 ## Usage
-
-Clone the repo and navigate to the folder with it. Open folder in cmd and type in:
+Type in cmd:
 
 ```bash
 python main.py
