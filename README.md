@@ -5,7 +5,7 @@ Big thanks to [Bloxalts](https://discord.gg/nsDfQJ8sES) for their awesome API!
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements.
 
 ```bash
 pip install requirements.txt
