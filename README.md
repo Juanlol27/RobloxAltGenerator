@@ -1,2 +1,4 @@
 # RobloxAltGenerator
-A Roblox alt generator made by me! Using API by bloxalts https://discord.gg/nsDfQJ8sES
+A Roblox alt generator made by me! Using API by [Bloxalts](https://discord.gg/nsDfQJ8sES)
+
+Please note this is for educational purposes only!
