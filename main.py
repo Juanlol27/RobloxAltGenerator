@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import requests
 import time
 from webdriver_manager.chrome import ChromeDriverManager
+import json
 
 # To not get rate-limited
 cached = []
@@ -35,6 +36,17 @@ def get_account() -> list[(str, str)]:
         quit()
 
 
+def save_json(filename: str, data: list) -> None:
+    """
+    Saves a json file
+    :param filename:
+    :param data:
+    :return:
+    """
+    with open(filename, "w") as f:
+        json.dump(data, f)
+
+
 def cache_worker() -> (str, str):
     """
     Caches the current account
@@ -46,7 +58,9 @@ def cache_worker() -> (str, str):
         print("Cached new accounts")
     n = cached[-1]
     cached.pop(-1)
+    save_json("accounts.json", cached)
     return n
+
 
 def check_if_logged_in(driver) -> None:
     """
@@ -65,6 +79,15 @@ def check_if_logged_in(driver) -> None:
     else:
         return
 
+
+def load_json(filename: str) -> dict:
+    """
+    Loads a json file
+    :param filename:
+    :return:
+    """
+    with open(filename, "r") as f:
+        return json.load(f)
 
 
 def login(username, password) -> None:
@@ -86,6 +109,11 @@ def login(username, password) -> None:
 
 if __name__ == '__main__':
     print("Made with love by NimVrod\nCredits to: Bloxalts for the API")
+    try:
+        cached = load_json("accounts.json")
+        print("Loaded saved accounts")
+    except FileNotFoundError:
+        print("No accounts saved found.")
     while True:
         if input("Press 'g' to get a new account, press anything else to quit: ") == "g":
             account = cache_worker()
